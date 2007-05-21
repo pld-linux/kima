@@ -54,4 +54,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde3/libkima.la
 %attr(755,root,root) %{_libdir}/kde3/libkima.so
 %{_datadir}/apps/kicker/applets/kima.desktop
-#%lang(en) %{_kdedocdir}/en/kima/index.docbook
