@@ -1,6 +1,5 @@
-# TODO:
-# - polish translation
 Summary:	Kima - Kicker monitoring applet
+Summary(pl.UTF-8):	Kima - aplet monitorujący dla Kickera
 Name:		kima
 Version:	0.7.1
 Release:	0.1
@@ -18,8 +17,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This applet monitors various temperature, frequency and fan sources in
-your kicker panel. Make sure you have enabled a supported kernel
+your Kicker panel. Make sure you have enabled a supported kernel
 module.
+
+%description -l pl.UTF-8
+Ten aplet panelu Kickera monitoruje różne źródła temperatury,
+częstotliwości i działanie wiatraków. Wymaga obsługiwanego modułu
+jądra.
 
 %prep
 %setup -q
@@ -40,6 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# TODO: pass proper dirs to make install instead of moving
 install -D $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.cache.bz2 $RPM_BUILD_ROOT%{_kdedocdir}/en/kima/index.cache.bz2
 install -D $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.docbook $RPM_BUILD_ROOT%{_kdedocdir}/en/kima/index.docbook
 rm -f $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.cache.bz2 $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.docbook
