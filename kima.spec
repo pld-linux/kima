@@ -5,10 +5,10 @@ Version:	0.7.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.elliptique.net/~ken/kima/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/kima/%{name}-%{version}.tar.gz
 # Source0-md5:	ed93c3a6871b514726fcdc6fbf49bba4
 Patch0:		kde-ac260-lt.patch
-URL:		http://www.elliptique.net/~ken/kima/
+URL:		http://kima.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel
