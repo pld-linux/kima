@@ -1,18 +1,18 @@
 Summary:	Kima - Kicker monitoring applet
 Summary(pl.UTF-8):	Kima - aplet monitorujący dla Kickera
 Name:		kima
-Version:	0.7.1
-Release:	0.1
+Version:	0.7.4
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.elliptique.net/~ken/kima/%{name}-%{version}.tar.gz
-# Source0-md5:	b5e4274e008f65ee8d60fdbc9790e144
+# Source0-md5:	ed93c3a6871b514726fcdc6fbf49bba4
 Patch0:		kde-ac260-lt.patch
-Patch1:		%{name}-am110.patch
 URL:		http://www.elliptique.net/~ken/kima/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel
+Obsoletes:	cpuinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -22,13 +22,12 @@ module.
 
 %description -l pl.UTF-8
 Ten aplet panelu Kickera monitoruje różne źródła temperatury,
-częstotliwości i działanie wiatraków. Wymaga obsługiwanego modułu
-jądra.
+częstotliwości i działanie wiatraków. Wymaga obsługiwanego
+modułu jądra.
 
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
