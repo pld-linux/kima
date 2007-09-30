@@ -11,6 +11,7 @@ Patch0:		kde-ac260-lt.patch
 URL:		http://kima.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	hal-devel
 BuildRequires:	kdelibs-devel
 Obsoletes:	cpuinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,12 +42,8 @@ cp -f /usr/share/automake/config.sub admin
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-# TODO: pass proper dirs to make install instead of moving
-install -D $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.cache.bz2 $RPM_BUILD_ROOT%{_kdedocdir}/en/kima/index.cache.bz2
-install -D $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.docbook $RPM_BUILD_ROOT%{_kdedocdir}/en/kima/index.docbook
-rm -f $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.cache.bz2 $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.docbook
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_htmldir=%{_kdedocdir}
 
 %find_lang %{name} --with-kde
 
@@ -54,6 +51,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/doc/HTML/en/kima/index.cache.bz2 $RPM_BUILD_ROO
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
+%doc AUTHORS ChangeLog README TODO
 %defattr(644,root,root,755)
 %{_libdir}/kde3/libkima.la
 %attr(755,root,root) %{_libdir}/kde3/libkima.so
