@@ -13,6 +13,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	hal-devel
 BuildRequires:	kdelibs-devel
+BuildRequires:	pkgconfig
 Obsoletes:	cpuinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
