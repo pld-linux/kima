@@ -2,7 +2,7 @@ Summary:	Kima - Kicker monitoring applet
 Summary(pl.UTF-8):	Kima - aplet monitorujący dla Kickera
 Name:		kima
 Version:	0.7.4
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kima/%{name}-%{version}.tar.gz
